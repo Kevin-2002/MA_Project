@@ -10,7 +10,23 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'dog-selector',
+    loadChildren: () => import('./dog-selector/dog-selector.module').then( m => m.DogSelectorPageModule)
   },
+  {
+    path: 'wedding-meal',
+    loadChildren: () => import('./wedding-meal/wedding-meal.module').then( m => m.WeddingMealPageModule)
+  },
+  {
+    path: 'venue',
+    loadChildren: () => import('./venue/venue.module').then( m => m.VenuePageModule)
+  },
+  {
+    path: 'weather',
+    loadChildren: () => import('./weather/weather.module').then( m => m.WeatherPageModule)
+  },
+
 ];
 
 @NgModule({
