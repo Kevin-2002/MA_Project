@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DogService } from "../services/dog.service";
 
 @Component({
   selector: 'app-dog-selector',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DogSelectorPage implements OnInit {
 
-  constructor() { }
+  dogs:any[]=[];
+  constructor(private dogService:DogService) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(){
+    this.dogService.GetDogData().subscribe(
+      (data) => {
+        this.dogs = data["message"];
+      }
+    );
   }
 
 }
