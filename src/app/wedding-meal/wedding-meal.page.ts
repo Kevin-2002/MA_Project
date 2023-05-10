@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CakeService } from "../services/cake.service";
 
 @Component({
   selector: 'app-wedding-meal',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeddingMealPage implements OnInit {
 
-  constructor() { }
+  //var
+  cakes:any[]=[];
+  cakeMessage:[]=[];
+  rand:number = Math.floor(Math.random() * 7);
+
+  constructor(private cakeService:CakeService) { }
 
   ngOnInit() {
   }
+
+  ionViewWillEnter(){
+    this.cakeService.GetCakeData().subscribe(
+      (data) => {
+        this.cakes = data[this.rand];
+      }
+    );
+  }
+
+
 
 }
