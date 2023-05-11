@@ -1,39 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="ion-text-center">
       Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
+    <ion-card>
+      <ion-card-subtitle>
+        <div id="Text">
+          prologue: 50 years into the future...<br><br>
+    
+          Climate change has declined the planet's sustainability 
+          and aleins have decided to step in by domesticating humans 
+          into dogs using their DNA altering device..<br><br>
+    
+          despite this, the aliens have embraced our marital culture 
+          by hosting dog weddings for their entertainment..<br><br>
+    
+          find out how your own dog wedding will go!
+        </div>    
+      </ion-card-subtitle>
 
-    <div id="Text">
-      prologue: 50 years into the future...<br><br>
-
-      Climate change has declined the planet's sustainability 
-      and aleins have decided to step in by domesticating humans 
-      into dogs using their DNA altering device..<br><br>
-
-      despite this, the aliens have embraced our marital culture 
-      by hosting dog weddings for their entertainment..<br><br>
-
-      find out how your own dog wedding will go!
-    </div>
-
-    <div id="navigation">
-      <ion-button [routerLink]="['/dog-selector']" size="small">What dog are you</ion-button>
-      <ion-button [routerLink]="['/wedding-meal']" size="small">Wedding meal</ion-button>
-      <ion-button [routerLink]="['/venue']" size="small">Venue</ion-button>
-      <ion-button [routerLink]="['/weather']" size="small">Weather</ion-button>
-    </div>
+      <ion-card-content>
+        <div id="navigation">
+          <ion-button [routerLink]="['/dog-selector']" size="small">
+            <ion-icon name="paw"></ion-icon>
+          </ion-button>
+          <ion-button [routerLink]="['/wedding-meal']" size="small">
+            <ion-icon name="fast-food"></ion-icon>
+          </ion-button>
+          <ion-button [routerLink]="['/venue']" size="small">
+            <ion-icon name="navigate-circle"></ion-icon>
+          </ion-button>
+        </div>    
+      </ion-card-content>
+    </ion-card>
+    
+    <br>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="center" [edge]="true">
+      <ion-button [routerLink]="['/results']">
+          <ion-icon name="reader"></ion-icon>
+      </ion-button>
+    </ion-fab>
 
   </div>
 </ion-content>

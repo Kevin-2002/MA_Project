@@ -1,13 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>venue</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title class="ion-text-start">venue</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">venue</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="container">
+    <ion-card>
+      <ion-card-content>
+        latitude, longditute<br>
+        {{lat}}, {{long}}<br>
+        time-stamp : {{time}}
+      </ion-card-content>
+      <ion-card-subtitle>
+        <ion-button (click)="getGPS()">get your co-ordinates</ion-button>
+      </ion-card-subtitle>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-subtitle>
+        given the alien's interest in marriage culture they have preserved all wedding venues
+        from current day society, they still use google maps because they find the resource quite 
+        helpful!
+      </ion-card-subtitle>
+      <ion-card-content>
+        <ion-button (click)="openBrowser()">search for a venue</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
 </ion-content>

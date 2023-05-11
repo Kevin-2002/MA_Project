@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>results</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+    
+    
+    
+    
+    <ion-card>
+      <ion-card-title>
+        You as a dog
+      </ion-card-title>
+      <ion-card-content>
+        <img src="{{dog}}">
+      </ion-card-content>
+      <ion-card-subtitle>
+        Note: if there is more than one dog on your screen you came out of the machine as multiple dogs.
+      </ion-card-subtitle>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-title>
+        Your wedding meal
+      </ion-card-title>
+      <ion-card-content>
+        <img src="{{cake}}">
+      </ion-card-content>
+      <ion-card-subtitle>
+        {{cakeMessage}}
+      </ion-card-subtitle>
+    </ion-card>
+
+
+  </div>
+</ion-content>

@@ -1,27 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>wedding-meal</ion-title>
+    <ion-back-button slot="start" (click)="onSave()"></ion-back-button>
+    <ion-title class="ion-text-start">bakery</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">wedding-meal</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  {{rand}}
-
-
   <div id="container">
     <ion-card>
+      <ion-card-title>Your wedding meal</ion-card-title>
       <ion-card-content>
         <img src="{{cakes}}">
       </ion-card-content>
+      <ion-card-subtitle>{{cakeMessage}}</ion-card-subtitle>
     </ion-card>
-    {{cakeMessage}}
-    <br>
-    <br>
-    <br>
   </div>
 </ion-content>

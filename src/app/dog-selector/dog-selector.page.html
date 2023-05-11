@@ -1,22 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>dog-selector</ion-title>
+    <ion-back-button slot="start" (click)="onSave()"></ion-back-button>
+    <ion-title class="ion-text-start">dog finder</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dog-selector</ion-title>
-    </ion-toolbar>
-  </ion-header>
   
 <div id="container">
   <ion-card>
+    <ion-card-title>
+      You as a Dog
+    </ion-card-title>
     <ion-card-content>
       <img src="{{dogs}}">
     </ion-card-content>
+    <ion-card-subtitle>
+      Note: if there is more than one dog on your screen you came out of the machine as multiple dogs.
+    </ion-card-subtitle>
   </ion-card>
-  {{dogs}}
 </div>
 </ion-content>

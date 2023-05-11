@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CakeService } from "../services/cake.service";
+import { Storage } from "@ionic/storage-angular";
 
 @Component({
   selector: 'app-wedding-meal',
@@ -13,7 +14,7 @@ export class WeddingMealPage implements OnInit {
   cakeMessage:any[]=[];
   rand:number = Math.floor(Math.random() * 6);
 
-  constructor(private cakeService:CakeService) { }
+  constructor(private cakeService:CakeService, private storage:Storage) { }
 
   ngOnInit() {
   }
@@ -27,6 +28,11 @@ export class WeddingMealPage implements OnInit {
     );
   }
 
+  async onSave(){
+    await this.storage.create();
+    await this.storage.set("cake", this.cakes);
+    await this.storage.set("cakeMessage", this.cakeMessage);
+  }
 
 
 }

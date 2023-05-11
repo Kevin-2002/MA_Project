@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DogService } from "../services/dog.service";
+import { Storage } from "@ionic/storage-angular";
 
 @Component({
   selector: 'app-dog-selector',
@@ -9,7 +10,7 @@ import { DogService } from "../services/dog.service";
 export class DogSelectorPage implements OnInit {
 
   dogs:any[]=[];
-  constructor(private dogService:DogService) { }
+  constructor(private dogService:DogService, private storage:Storage) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,11 @@ export class DogSelectorPage implements OnInit {
         this.dogs = data["message"];
       }
     );
+  }
+
+  async onSave(){
+    await this.storage.create();
+    await this.storage.set("dogs", this.dogs);
   }
 
 }
