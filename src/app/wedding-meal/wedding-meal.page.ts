@@ -10,8 +10,8 @@ export class WeddingMealPage implements OnInit {
 
   //var
   cakes:any[]=[];
-  cakeMessage:[]=[];
-  rand:number = Math.floor(Math.random() * 7);
+  cakeMessage:any[]=[];
+  rand:number = Math.floor(Math.random() * 6);
 
   constructor(private cakeService:CakeService) { }
 
@@ -22,6 +22,7 @@ export class WeddingMealPage implements OnInit {
     this.cakeService.GetCakeData().subscribe(
       (data) => {
         this.cakes = data[this.rand];
+        this.cakeMessage = data.message[this.rand];
       }
     );
   }
