@@ -8,7 +8,12 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
+    <!-- ion cards used to display things to the screen neatly -->
     <ion-card>
+      <ion-card-title>
+        The Climate Mating Story
+      </ion-card-title>
+
       <ion-card-subtitle>
         <div id="Text">
           prologue: 50 years into the future...<br><br>
@@ -26,6 +31,8 @@
 
       <ion-card-content>
         <div id="navigation">
+          <!-- routerLink changes which page is running via path from app-routing.module.ts-->
+          <!-- ion icon is added to decorate button with self explanitory symbols to make design more appealing -->
           <ion-button [routerLink]="['/dog-selector']" size="small">
             <ion-icon name="paw"></ion-icon>
           </ion-button>
@@ -39,6 +46,7 @@
       </ion-card-content>
     </ion-card>
     
+    <!-- ion-fab is being used to fix the button position on the screen accordingly -->
     <br>
     <ion-fab slot="fixed" vertical="bottom" horizontal="center" [edge]="true">
       <ion-button [routerLink]="['/results']">

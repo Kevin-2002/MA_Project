@@ -10,7 +10,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'dog-selector',
     loadChildren: () => import('./dog-selector/dog-selector.module').then( m => m.DogSelectorPageModule)
   },
@@ -21,10 +22,6 @@ const routes: Routes = [
   {
     path: 'venue',
     loadChildren: () => import('./venue/venue.module').then( m => m.VenuePageModule)
-  },
-  {
-    path: 'weather',
-    loadChildren: () => import('./weather/weather.module').then( m => m.WeatherPageModule)
   },
   {
     path: 'results',
