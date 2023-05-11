@@ -12,7 +12,10 @@
       <ion-card-content>
         <img src="{{cakes}}">
       </ion-card-content>
-      <ion-card-subtitle>{{cakeMessage}}</ion-card-subtitle>
+      <ion-card-subtitle>
+        {{cakeMessage}}<br>
+        <ion-button (click)="onSave()">save</ion-button>
+      </ion-card-subtitle>
     </ion-card>
   </div>
 </ion-content>
